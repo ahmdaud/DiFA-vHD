@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f3d5c">
+  <?!= include('Style'); ?>
+</head>
+<body>
+
+  <div class="app-shell">
+
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">🏛️</div>
+        <div>
+          <div class="brand-title">DiFA</div>
+          <div class="brand-sub">(Disposisi From Anywhare) v.HD</div>
+        </div>
+        <button class="sidebar-close" id="sidebarClose" aria-label="Tutup menu">✕</button>
+      </div>
+
+      <nav class="nav-menu">
+        <button class="nav-item active" data-page="dashboard">
+          <span class="nav-ico">📊</span> Dashboard
+        </button>
+        <button class="nav-item" data-page="masuk">
+          <span class="nav-ico">📥</span> Surat Masuk
+        </button>
+        <button class="nav-item" data-page="keluar">
+          <span class="nav-ico">📤</span> Surat Keluar
+        </button>
+        <button class="nav-item" data-page="disposisi">
+          <span class="nav-ico">📝</span> Disposisi
+        </button>
+        <button class="nav-item" data-page="laporan">
+          <span class="nav-ico">📈</span> Laporan Bulanan
+        </button>
+        <button class="nav-item" data-page="arsip">
+          <span class="nav-ico">🗄️</span> Arsip &amp; Backup
+        </button>
+        <button class="nav-item" data-page="master">
+          <span class="nav-ico">⚙️</span> Data Master
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="status-dot"></div> Sistem Online
+      </div>
+    </aside>
+
+    <!-- MAIN AREA -->
+    <div class="main-area">
+
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+          <div style="min-width:0;">
+            <h1 id="pageTitle">Dashboard</h1>
+            <p id="pageSubtitle" class="muted">Ringkasan aktivitas persuratan hari ini</p>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <input class="search-box" type="text" placeholder="Cari nomor surat, perihal..." />
+          <div class="avatar">AD</div>
+        </div>
+      </header>
+
+      <main id="content" class="content">
+        <!-- Diisi oleh JavaScript.html -->
+        <div class="loading">Memuat data...</div>
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Template kartu statistik (dipakai lewat JS) -->
+  <template id="tpl-stat-card">
+    <div class="stat-card">
+      <div class="stat-icon"></div>
+      <div>
+        <div class="stat-value">0</div>
+        <div class="stat-label">Label</div>
+      </div>
+    </div>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <?!= include('JavaScript'); ?>
+
+</body>
+</html>
